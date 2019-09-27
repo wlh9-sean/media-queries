@@ -62,7 +62,9 @@ table {
     background: #343A40;
     display: flex;
     align-items: center;
-    justify-content: space-between
+    justify-content: space-between;
+    position: fixed;
+    z-index: 10;
 }
 
 .title {
@@ -74,11 +76,62 @@ table {
 
 .hamburger {
     display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin-right: 50px;
+    height: 20px;
+    width: 20px;
+    font-size: 1.5em;
+    color: #fcd036;
+}
+
+.hamburger:hover {
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    margin: 5px;
+}
+
+.menu > p {
+    margin: 15px;
+    color: white;
+    font-size: 1.1em;
+}
+
+/* slide out menu ahahahaha */
+
+.slideMenu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 9;
+    top: 10vh;
+    width: 100%;
+    transition: .8s;
+    background: #343A40;
+    font-size: 1.2em;  
+}
+
+.slideMenu > p {
+    margin: 10px;
+    color: white;
+}
+
+.slide {
+    top: -20vh;
+    
 }
 
 @media(max-width: 850px) {
     .hamburger {
         display: flex;
+    }
+
+    .menu {
+        display: none;
     }
 
 }
